@@ -3,13 +3,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCtpDvSHueNJgPBk-RCgCQ36JUR9ZGTQ7k",
-    authDomain: "lider-swarzedz.firebaseapp.com",
-    databaseURL: "https://lider-swarzedz.firebaseio.com",
-    projectId: "lider-swarzedz",
-    storageBucket: "lider-swarzedz.appspot.com",
-    messagingSenderId: "361061213670",
-    appId: "1:361061213670:web:c6868201c1065887"
+    
   };
 
   class Firebase {
