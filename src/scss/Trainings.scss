@@ -1,0 +1,23 @@
+@import 'constants';
+
+.trainings {
+    color:white;
+    p{
+        margin-bottom:0;
+    }
+    .training-box {
+        .training-team {
+            font-family:$Roboto;
+            font-size:30px;
+        }
+        .training-location {
+            font-family:$Lato;
+            font-weight: bold;
+            margin-top:10px;
+            .training-hours {
+                border-left:2px solid white;
+                padding-left:8px;
+            }
+        }
+    }
+}

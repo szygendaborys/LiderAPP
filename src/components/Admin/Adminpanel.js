@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
 import { withAuthorisation } from '../Session'
-import SignOutBtn from '../SignOutBtn'
 import { withFirebase } from '../Firebase'
+
+import AdminPostMng from './AdminPostMng';
+import AdminNavbar from './Navbar';
 
 const Adminpanel = ({authUser}) => (
 <div>{authUser ? <AdminpanelAuth /> : <AdminpanelNonAuth />}</div>
@@ -40,12 +42,11 @@ class AdminpanelAuth extends Component {
     //     this.props.firebase.posts().off();
     //   }
 
-    render() {
+    render() {  
         return (
             <div>
-                HERE IS GOING TO BE ADMIN PANEL ACCESSIBLE AFTER REACT LOG IN WITH FIREBASE
-                permitted
-                <SignOutBtn />
+                <AdminNavbar />
+                <AdminPostMng />
             </div>
         )
     }

@@ -1,0 +1,27 @@
+@import 'constants';
+
+.wrapper {
+    margin-top:35pt;
+    padding-left:$padding-wrapper;
+}
+
+.section-title {
+    font-family:$Roboto;
+    font-size:30pt;
+    color:$text;
+    margin-left:5pt;
+    margin-bottom:30pt;
+}
+    
+@media only screen and (max-width:761px) {
+    .wrapper {
+        padding-left:7%;
+        padding-right:7%;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .wrapper {
+        padding-right:4%;
+    }
+}

@@ -1,9 +1,11 @@
 import React from 'react'
 import { withFirebase } from './Firebase'
 
+import '../scss/NavbarAdm.scss'
+
 const SignOutBtn = ({ firebase }) => (
-    <button type="button" onClick={firebase.doSignOut}>
-      Sign Out
+    <button className='signout-btn' type="button" onClick={firebase.doSignOut}>
+      Wyloguj
     </button>
   );
 

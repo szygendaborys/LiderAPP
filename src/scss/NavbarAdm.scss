@@ -1,0 +1,65 @@
+@import 'constants';
+
+@mixin link-def {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    height:32pt;
+    background-color:$primary;
+    color:white;
+    font-weight:bold;
+    font-family:$Roboto;
+    font-size:14pt;
+    padding-top:5pt;
+    margin-bottom:0;
+}
+
+
+.nav-adm {
+    color:white;
+    display:flex;
+    font-family: $Roboto;
+    h5 {
+        margin:8px auto;
+        font-weight: bold;
+    }
+
+    .navbar-admin {
+        display:flex;
+
+        .link {
+            @include link-def;
+            padding-left:20px;
+            padding-right:20px;
+            margin-right:2rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color:$link-active;
+            }
+        }
+        .link__active {
+            border-left:4pt solid white;
+            background-color: $link-active;
+        }
+
+        .signout-btn {
+            font-family: $Lato;
+            font-weight:bolder;
+            font-size:18pt;
+            color:$text;
+
+            border:none;
+            padding-left:2rem;
+            padding-right:2rem;
+            background-color:$primary;
+            transition:0.3s;
+
+            &:hover {
+                cursor: pointer;
+                background-color:$text;
+                color:$primary;
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
 import { withFirebase } from './Firebase';
 import * as ROUTES from '../constants/routes';
+
+import '../scss/SignIn.scss';
 
 const INITIAL_STATE = {
     email:'',
@@ -12,8 +13,8 @@ const INITIAL_STATE = {
 }
 
 const SignInPage = () => (
-    <div>
-      <h1>SignIn</h1>
+    <div className='signin-container'>
+      <h1>Dostęp tylko dla zalogowanych</h1>
       <SignInForm />
     </div>
   );
@@ -55,26 +56,26 @@ const SignInPage = () => (
       const isInvalid = password === '' || email === '';
   
       return (
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} className='signin-form'>
           <input
             name="email"
             value={email}
             onChange={this.onChange}
             type="text"
-            placeholder="Email Address"
+            placeholder="Login"
           />
           <input
             name="password"
             value={password}
             onChange={this.onChange}
             type="password"
-            placeholder="Password"
+            placeholder="Hasło"
           />
           <button disabled={isInvalid} type="submit">
             Sign In
           </button>
   
-          {error && <p>{error.message}</p>}
+          {error && <p className='err'>{error.message}</p>}
         </form>
       );
     }

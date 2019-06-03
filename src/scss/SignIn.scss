@@ -1,0 +1,54 @@
+@import 'constants';
+
+.signin-container {
+    margin-top:2rem;
+    color:white;
+    text-align: center;
+    h1 {
+        margin-bottom:2rem;
+    }
+    .signin-form {
+        display:flex;
+        flex-direction:column;
+        width:350px;
+        margin-left:50%;
+        transform: translateX(-50%);
+        padding:5px 20px;
+        padding-bottom:20px;
+        background-color:$post-readmore;
+        input {
+            border:none;
+            height:40px;
+            padding-left:5pt;
+            &:first-of-type {
+                margin-top:1rem;
+                margin-bottom:0;
+            }
+        }
+        button {
+            font-family:$Lato;
+            font-size:20pt;
+            border:none;
+            margin-top:1rem;
+            padding:10px;
+            padding-top:5px;
+            padding-bottom:5px;
+            background-color:$post-primary;
+            color:$text;
+            font-weight:bold;
+
+            &:disabled {
+                background-color:$post-secondary;
+                color:rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        .err {
+            margin-top:1rem;
+            color:$secondary;
+            font-weight:bold;
+            margin-bottom:0;
+            
+        }
+    }
+}

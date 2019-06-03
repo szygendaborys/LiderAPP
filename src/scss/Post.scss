@@ -1,0 +1,133 @@
+@import 'constants';
+
+@mixin post-padding {
+    padding-top:5pt;
+    padding-bottom:5pt;
+    padding-left:11pt;
+    padding-right:9pt;
+}
+
+.posts {
+    display:flex;
+    justify-items: center !important;
+}
+
+.post-image {
+    padding:0 !important;
+    img{
+    width:100%;
+    }
+}
+
+.post-content {
+    background-color:$post-secondary;
+    color: $text;
+    padding:0 !important;
+    display:flex;
+    flex-direction: column;
+    .post-title {
+        @include post-padding;
+        font-family: $Roboto;
+        font-size:16pt;
+        font-weight:bold;
+        color:white;
+        background-color:$post-primary;
+    }
+    .post-desc {
+        @include post-padding;
+        font-size:11pt;
+    }
+    .post-footer {
+        display:flex;
+        position: absolute;
+        bottom:0;
+        width:100%;
+        justify-content: space-between;
+        background-color:$post-primary;
+        .post-author{
+            @include post-padding;
+            padding-right:3pt;
+            p {
+                margin:0;
+                font-size:8pt;
+            }
+        }
+        .post-readmore__btn {
+            width:43%;
+            border:none;
+            background-color:$post-readmore;
+            color:$text;
+            font-weight:bold;
+            transition:0.3s;
+            font-size:8pt;
+
+            &:hover {
+                filter: brightness(1.2);    
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1420px) {
+    .post-content {
+        .post-title {
+            font-size:10pt;
+        }
+        .post-desc {
+            font-size:7pt;
+        }
+        .post-footer {
+            .post-author {
+                padding-left:3pt;
+                p {
+                    font-size:6pt;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .post-content {
+        .post-footer{
+            .post-author {
+                display:none;
+            }
+            .post-readmore__btn {
+                width:100%;
+                padding-top:5pt;
+                padding-bottom:5pt;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .post {
+
+        .post-content {
+            .post-title {
+                font-size:18pt;
+            }
+            .post-desc {
+                //height:100px;
+                font-size:12pt;
+                padding-bottom:28pt;
+            }
+            .post-footer {
+                .post-author {
+
+                }
+                .post-readmore__btn {
+                    font-size:14pt;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .post {
+        margin-left:0 !important;
+    }
+}

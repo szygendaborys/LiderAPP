@@ -2,13 +2,47 @@ import React, { Component } from 'react'
 import { withFirebase } from './Firebase'
 import Post from './Post'
 
+import '../scss/Post.scss'
+
 class Posts extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading:false,
+            posts:[]
+        }
+    }
+    componentDidMount() {
+        this.setState({ loading: true });
+        // console.log(this.props.firebase.posts())
+        this.props.firebase.posts().get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                this.setState({ 
+                    posts:this.state.posts.concat(doc.data()),
+                    loading:false
+                });
+            })
+        }) 
+    }
+
     render() {
         return (
-            <div>
-                <h2>Here I am a List of Posts!</h2>
-                
+            <div className='posts'>
+                <div className='row'>
+                    {this.state.posts.map(post => (
+                        <Post 
+                            key={post.id}
+                            title={post.title}
+                            author={post.author}
+                            desc={post.desc}
+                            text={post.text}
+                            id={post.pid}
+                            date={post.date}
+                            img={post.img}/>
+                    ))}
+
+                    {this.state.loading && <p>Loading...</p>}
+                </div>
             </div>
         )
     }
