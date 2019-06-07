@@ -9,34 +9,45 @@ class Posts extends Component {
         super(props);
         this.state = {
             loading:false,
-            posts:[]
+            posts:[],
+            post_id:[]
         }
     }
     componentDidMount() {
+        let newPosts=[];
+        let postsId=[];
+
         this.setState({ loading: true });
-        // console.log(this.props.firebase.posts())
+
         this.props.firebase.posts().get().then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                this.setState({ 
-                    posts:this.state.posts.concat(doc.data()),
+            querySnapshot.forEach((doc, i) => {
+                newPosts = newPosts.concat(doc.data());
+                postsId = postsId.concat(doc.id);           
+                this.setState({
+                    posts:newPosts,
+                    post_id:postsId,
                     loading:false
                 });
             })
-        }) 
+        })
+
+        
+        
+        
     }
 
     render() {
         return (
             <div className='posts'>
                 <div className='row'>
-                    {this.state.posts.map(post => (
+                    {this.state.posts.map((post, i) => (
                         <Post 
-                            key={post.id}
+                            key={i}
                             title={post.title}
                             author={post.author}
                             desc={post.desc}
                             text={post.text}
-                            id={post.pid}
+                            id={this.state.post_id[i]}
                             date={post.date}
                             img={post.img}/>
                     ))}

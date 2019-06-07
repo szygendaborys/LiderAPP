@@ -31,7 +31,7 @@ const firebaseConfig = {
 
     // Initialize functions for posts
 
-    post = pid => this.db.doc('posts'+pid);
+    // post = pid => this.db.doc('posts'+pid);
     posts = () => this.db.collection('posts');
   }
 

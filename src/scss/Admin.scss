@@ -1,0 +1,49 @@
+@import 'constants';
+
+.adm-post {
+    position: relative;
+    &__mng {
+        button {
+            width:60px;
+            border:none;
+            background-color:$post-readmore;
+            color:$text;
+            transition:0.3s;
+            i{
+                padding:10px;
+            }
+        }
+        .btn-edit:hover {
+            background-color:green;
+            color:white;
+        }
+        .btn-delete:hover {
+            background-color:red;
+            color:white;
+        }
+    }
+    &:first-of-type {
+        margin-top:40px;
+    }
+}
+
+.btn-addpost{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:40pt;
+    height:40pt;
+    background-color:darkgreen;
+    color:$text;
+    font-size:30px;
+    font-weight:bolder;
+    border:none;
+    border-radius:35px; 
+    transition:0.3s;
+    
+    &:hover {
+        background-color:green;
+        color:white;
+        transform: scale(1.1);
+    }
+}

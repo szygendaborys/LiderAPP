@@ -16,7 +16,7 @@ import Team from './components/Team';
 import Trainings from './components/Trainings';
 import SignInPage from './components/SignInPage';
 import Admin from './components/Admin/Adminpanel';
-
+import Postlink from './components/Postlink';
 import * as ROUTES from './constants/routes';
 
 
@@ -43,12 +43,14 @@ class App extends Component {
       />
       <Router>
        <Navbar />
-
+        
         <Route exact path={ROUTES.HOME} component={Home} />
         <Route path={ROUTES.TEAM} component={Team} />
         <Route path={ROUTES.TRAININGS} component={Trainings} />
         <Route path={ROUTES.SIGNINPAGE} component={SignInPage} />
         <Route path={ROUTES.ADMINPANEL} component={Admin} />
+
+        <Route path={ROUTES.POSTLINK} component={Postlink} />
       </Router>
 
       
