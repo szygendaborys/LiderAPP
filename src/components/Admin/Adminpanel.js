@@ -21,7 +21,6 @@ class AdminpanelAuth extends Component {
     }
     componentDidMount() {
         this.setState({ loading: true });
-        console.log(this.props.firebase)
     //     this.props.firebase.posts().on('value', snapshot => {
     //     const postsObject = snapshot.val();
 

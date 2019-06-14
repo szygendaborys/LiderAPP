@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCtpDvSHueNJgPBk-RCgCQ36JUR9ZGTQ7k",
@@ -19,7 +20,8 @@ const firebaseConfig = {
       this.auth = app.auth();
       // initialize Firebase Realtime Database
       this.db = app.firestore();
-
+      this.fieldValue = app.firestore.FieldValue;
+      this.storage = app.storage().ref('posts');
     }
 
     // Initialize two functions that connect to Firebase : Log In and Log Out
@@ -33,6 +35,7 @@ const firebaseConfig = {
 
     // post = pid => this.db.doc('posts'+pid);
     posts = () => this.db.collection('posts');
+    postimg = () => this.storage;
   }
 
 

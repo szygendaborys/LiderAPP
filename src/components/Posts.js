@@ -20,7 +20,7 @@ class Posts extends Component {
         this.setState({ loading: true });
 
         this.props.firebase.posts().get().then(querySnapshot => {
-            querySnapshot.forEach((doc, i) => {
+            querySnapshot.forEach(doc => {
                 newPosts = newPosts.concat(doc.data());
                 postsId = postsId.concat(doc.id);           
                 this.setState({
@@ -49,7 +49,7 @@ class Posts extends Component {
                             text={post.text}
                             id={this.state.post_id[i]}
                             date={post.date}
-                            img={post.img}/>
+                            imgURL={post.imgURL}/>
                     ))}
 
                     {this.state.loading && <p>Loading...</p>}

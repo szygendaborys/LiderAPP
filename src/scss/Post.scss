@@ -7,6 +7,22 @@
     padding-right:9pt;
 }
 
+@mixin postimg {
+    width:100%;
+            filter: brightness(0.8);
+            transition:0.3s;
+            &:hover {
+                transform: scale(1.1);
+                filter: brightness(1);
+    }
+}
+
+* {
+    p {
+        margin-bottom:0;
+    }
+}
+
 .posts {
     display:flex;
     justify-items: center !important;
@@ -14,8 +30,9 @@
 
 .post-image {
     padding:0 !important;
+    overflow: hidden;
     img{
-    width:100%;
+        @include postimg;
     }
 }
 
@@ -42,16 +59,8 @@
         position: absolute;
         bottom:0;
         width:100%;
-        justify-content: space-between;
+        justify-content: flex-end;
         background-color:$post-primary;
-        .post-author{
-            @include post-padding;
-            padding-right:3pt;
-            p {
-                margin:0;
-                font-size:8pt;
-            }
-        }
         .post-readmore__btn {
             width:43%;
             border:none;
@@ -60,9 +69,62 @@
             font-weight:bold;
             transition:0.3s;
             font-size:8pt;
-
+            padding-top:7px;
+            padding-bottom:5px;
             &:hover {
                 filter: brightness(1.2);    
+            }
+        }
+    }
+}
+
+.postlink {
+    display:flex;
+    color:white;
+    margin-top:40px;
+    background-color:$post-secondary;
+    margin-bottom:100px;
+    font-family:$Roboto;
+    .right-col {
+        padding:0;
+        overflow: hidden;
+        order:2;
+        img {
+            @include postimg;
+        }
+    }
+
+    .left-col {
+        padding:0;
+        order:1;
+        .postlink-title {
+            @include post-padding;
+            background-color:$post-primary;
+        }
+        .postlink-text {
+            @include post-padding;
+        }
+        .postlink-footer {
+            display:flex;
+            position:absolute;
+            justify-content: flex-end;
+            align-items: center;
+            bottom:0;
+            right:0;
+            left:0;
+            background-color:$post-primary;
+            a {
+                width:25%;
+                height:29px;
+                background-color:$post-readmore;
+                color:$text;
+                text-align: center;
+                padding-top:3px;
+                font-size:bold;
+                transition:0.3s;
+                &:hover {
+                    filter: brightness(1.2);
+                }
             }
         }
     }
@@ -76,23 +138,12 @@
         .post-desc {
             font-size:7pt;
         }
-        .post-footer {
-            .post-author {
-                padding-left:3pt;
-                p {
-                    font-size:6pt;
-                }
-            }
-        }
     }
 }
 
 @media only screen and (max-width:1100px) {
     .post-content {
         .post-footer{
-            .post-author {
-                display:none;
-            }
             .post-readmore__btn {
                 width:100%;
                 padding-top:5pt;
@@ -104,7 +155,6 @@
 
 @media only screen and (max-width:991px) {
     .post {
-
         .post-content {
             .post-title {
                 font-size:18pt;
@@ -112,22 +162,42 @@
             .post-desc {
                 //height:100px;
                 font-size:12pt;
-                padding-bottom:28pt;
+                padding-bottom:35pt;
             }
             .post-footer {
-                .post-author {
-
-                }
                 .post-readmore__btn {
                     font-size:14pt;
                 }
             }
         }
     }
+
+    .postlink {
+        display:flex;
+        .left-col {
+            order:2;
+            .postlink-text {
+                padding-bottom:50px;
+            }
+    
+        }
+        .right-col {
+            order:1;
+        }
+    }
+
+
+
 }
 
 @media only screen and (max-width:767px) {
     .post {
         margin-left:0 !important;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .postlink {
+        max-width:90%;  
     }
 }
