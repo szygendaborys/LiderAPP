@@ -1,0 +1,70 @@
+@import 'constants';
+
+$playerImgWidthLG: 400px;// ZMIEN TO POTEMMMMM SPRAWDZ W ADOBIE JAKIE JEST ODPOWIEDNIE RATIO
+$playerImgHeightLG: 600px;
+
+.team {
+    font-family:$Lato;
+
+    .carousel {
+        display:flex;
+        justify-content: center;
+        margin:0;
+        margin-left:-7%;
+        .content {
+            .player-image {
+                width:$playerImgWidthLG;
+                height:$playerImgHeightLG;
+            }
+
+            .content-secondary {
+                display:flex;
+                .player-image {
+                    opacity:0.2;
+                }
+            }
+
+            .content-primary {
+                margin-bottom:200px;
+                .content-image__main {
+                    position: absolute;
+                    top:200px;
+                    left:50%;
+                    transform: translateX(-50%);
+                }
+            }
+            .content-text{
+                color:white;
+                text-align: center;
+                margin-top:200px;
+                margin-bottom:200px;
+                .player-name{
+                    font-size:2.5rem;
+                    font-weight: bolder;
+                }
+                .player-position, .player-age {
+                    font-size:1.5rem;
+                    font-weight:bold;
+                }
+            }
+        }
+    }
+
+    .team-nav {
+        display:flex;
+        justify-content: center;
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        font-family:$Roboto;
+        font-size:2rem;
+        font-weight: bold;
+        button {
+            background-color:$post-secondary;
+            border:none;
+            width:600px;
+            height:60px;
+            
+        }
+    }
+}

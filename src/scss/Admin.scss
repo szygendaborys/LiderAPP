@@ -73,8 +73,13 @@
         top:5%;
         bottom:5%;
         border-radius:15px;
+        border-top-right-radius: 0;
         padding:15px;
         overflow-y: auto;
+        overflow-x:hidden;
+        p {
+            font-weight: bold;
+        }
         form {
             .form-component {
                 width:100%;
@@ -90,6 +95,9 @@
                     background-color: $post-readmore;
                     font-family: $Lato;
                     font-size:1.2rem;
+                    .modal-upload-btn:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -97,9 +105,42 @@
         .postimg-preview {
             display:flex;
             flex-direction: column;
+            margin-bottom:20px;
             img {
                 max-height:200px;
                 max-width:300px;
+            }
+        }
+
+        .modal-submit {
+            font-size:2rem;
+            border:none;
+            background-color:darkgreen;
+            color:$text;
+            padding:10px 20px;
+            transition:0.3s;
+            &:hover {
+                background-color:green;
+            }
+        }
+
+        .modal-close {
+            position:absolute;
+            top:0;
+            right:0;
+            font-size:2rem;
+            color:$text;
+            background-color:$post-readmore;
+            margin-right:-5px;
+            padding-right:2.5rem;
+            padding-left:2rem;
+            padding-bottom:0.5rem;
+            border:none;
+
+            transition:0.3s;
+            &:hover {
+                background-color:red;
+                color:white;
             }
         }
     }

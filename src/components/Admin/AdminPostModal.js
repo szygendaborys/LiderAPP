@@ -47,6 +47,14 @@ class AdminPostModal extends Component {
         e.preventDefault();
         if(this.props.post.id) {
             console.log('zmiana');
+            this.props.firebase.posts().doc(this.props.post.id).set({
+                date:this.props.firebase.fieldValue.serverTimestamp(),
+                desc:this.props.post.desc,
+                imgURL:this.props.post.imgURL,
+                text:this.props.post.text,
+                title:this.props.post.title 
+            })
+
         } else {
             this.props.firebase.posts().add({
                 date:this.props.firebase.fieldValue.serverTimestamp(),
@@ -65,9 +73,7 @@ class AdminPostModal extends Component {
         return (
             <div className='admin-modal hidden' id='admin-modal__post'>
                 <div className='modal-content'>
-                    <h1>Nowy Post</h1>
-                    <h2>{this.props.post.title}</h2>
-
+                    {this.props.post.title === "" ? <h1>Nowy Post</h1> : <h2>{this.props.post.title}</h2>}
                     <form>
                         <div className='form-component'>
                             <p>Tytuł:</p>
@@ -84,7 +90,7 @@ class AdminPostModal extends Component {
                         <div className='form-component'>
                             <p>Zdjęcie do posta</p>
                             <label className='form-image'>
-                                Wybierz zdjęcie
+                                <p className='modal-upload-btn'>Wybierz zdjęcie</p>
                                 <FileUploader 
                                     hidden
                                     accept='image/*'
@@ -100,7 +106,7 @@ class AdminPostModal extends Component {
                             {this.state.isUploading && <p>Progress: {this.state.progress}/100%</p>}
                             {this.props.post.imgURL && <p className='postimg-preview'>Podgląd: <img src={this.props.post.imgURL} alt='Post Preview'/></p>}
                         </div>
-                        <button type='submit' onClick={e => this.onSubmit(e)}>Submit</button>
+                        <button className='modal-submit' type='submit' onClick={e => this.onSubmit(e)}>Zatwierdź</button>
                     </form>
 
                     <button className='modal-close' onClick={() => this.hideModal()}>x</button>

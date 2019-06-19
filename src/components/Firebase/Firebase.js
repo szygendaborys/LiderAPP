@@ -21,7 +21,9 @@ const firebaseConfig = {
       // initialize Firebase Realtime Database
       this.db = app.firestore();
       this.fieldValue = app.firestore.FieldValue;
-      this.storage = app.storage().ref('posts');
+      this.postimgStorage = app.storage().ref('posts');
+      this.postRootStorage = app.storage();
+      this.playersimg = app.storage().ref('players');
     }
 
     // Initialize two functions that connect to Firebase : Log In and Log Out
@@ -35,7 +37,11 @@ const firebaseConfig = {
 
     // post = pid => this.db.doc('posts'+pid);
     posts = () => this.db.collection('posts');
-    postimg = () => this.storage;
+    postimg = () => this.postimgStorage;
+    postimgRoot = () => this.postRootStorage;
+    
+    players = () => this.db.collection('players');
+    playersimg = () => this.playersimg;
   }
 
 
