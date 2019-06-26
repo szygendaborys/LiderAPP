@@ -1,7 +1,10 @@
 @import 'constants';
 
-$playerImgWidthLG: 400px;// ZMIEN TO POTEMMMMM SPRAWDZ W ADOBIE JAKIE JEST ODPOWIEDNIE RATIO
-$playerImgHeightLG: 600px;
+$playerImgWidthLG: 300px;// ZMIEN TO POTEMMMMM SPRAWDZ W ADOBIE JAKIE JEST ODPOWIEDNIE RATIO
+$playerImgHeightLG: auto;
+
+$playerImgWidthMD: 200px;
+$playerImgWidthSM: 165px;
 
 .team {
     font-family:$Lato;
@@ -11,16 +14,19 @@ $playerImgHeightLG: 600px;
         justify-content: center;
         margin:0;
         margin-left:-7%;
+        margin-bottom:100px;
         .content {
             .player-image {
                 width:$playerImgWidthLG;
                 height:$playerImgHeightLG;
+                transition:0.3s;
             }
 
             .content-secondary {
                 display:flex;
                 .player-image {
                     opacity:0.2;
+                    transition:0.3s;  
                 }
             }
 
@@ -37,7 +43,6 @@ $playerImgHeightLG: 600px;
                 color:white;
                 text-align: center;
                 margin-top:200px;
-                margin-bottom:200px;
                 .player-name{
                     font-size:2.5rem;
                     font-weight: bolder;
@@ -54,17 +59,92 @@ $playerImgHeightLG: 600px;
         display:flex;
         justify-content: center;
         position:absolute;
-        left:50%;
-        transform: translateX(-50%);
+        bottom:0;
+        left:0;
+        right:0;
         font-family:$Roboto;
         font-size:2rem;
         font-weight: bold;
         button {
-            background-color:$post-secondary;
+            background-color:rgba(255, 255, 255, 0.1);
+            color:white;
             border:none;
-            width:600px;
-            height:60px;
+            max-width:80px;
+            height:43pt;
+            border-radius: 10px;
+            &:first-of-type{
+                margin-right:600px;
+            }
+        }
+    }
+}
+
+// ANIMATION
+
+.flash {
+    animation-name: playerChangeAnimation;
+    animation-duration:0.5s;
+}
+
+@keyframes playerChangeAnimation {
+    0% {filter:brightness(1);}
+    50% {filter:brightness(2);}
+    100% {filter: brightness(1);}
+}
+
+// MEDIA SCREEN
+
+@media only screen and (max-width:827px) {
+
+.wrapper {
+    padding:0;
+}
+
+.section-title {
+    margin-left:40px;
+}
+.carousel {
+    margin-left:0 !important;
+}
+    .team-nav {
+        margin:0 !important;
+        bottom:-100px!important;
+        button {
             
+            min-width: 50% !important;
+            border-radius:0 !important;
+            &:first-of-type{
+                margin:0!important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .player-image {
+        width:$playerImgWidthMD !important;
+    }
+    .content-secondary {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .player-image {
+        width:$playerImgWidthSM !important;
+    }
+
+    .content-image__main {
+        top:150px !important;
+    }
+
+    .content-text {
+        .player-name {
+            font-size:1.5rem !important;
+        }
+
+        .player-position, .player-age {
+            font-size:1.2rem !important;
         }
     }
 }

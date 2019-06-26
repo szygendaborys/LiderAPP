@@ -67,6 +67,8 @@ class Team extends Component {
                 indexNext: indexNext+1  
             });
         }
+
+        this.animatePlayerChange();
     }
 
     handlePlayerChangePrev() {
@@ -99,6 +101,24 @@ class Team extends Component {
         }
     }
 
+    animatePlayerChange() {
+        let playerImages = document.getElementById('player-1');
+        let playerImages2 = document.getElementById('player-2');
+        let playerImages3 = document.getElementById('player-3');
+
+        console.log(playerImages)
+
+        playerImages.classList.add('flash');
+        playerImages2.classList.add('flash');
+        playerImages3.classList.add('flash');
+
+        setTimeout(() => {
+            playerImages.classList.remove('flash');
+            playerImages2.classList.remove('flash');
+            playerImages3.classList.remove('flash');
+        }, 500);
+    }
+
     render() {
         if(!this.state.loading && this.state.players.length > 3) {
             let {indexPrev, index, indexNext} = this.state;
@@ -111,26 +131,27 @@ class Team extends Component {
                     <div className='row carousel'>
                         <div className='content'>
                             <div className='content-secondary'>
-                                <img className='player-image' src={this.state.players[indexPrev].imgURL} alt='Zawodnik.png' /> 
-                                <img className='player-image' src={this.state.players[indexNext].imgURL} alt='Zawodnik.png' />
+                                <img id='player-1' className='player-image' src={this.state.players[indexPrev].imgURL} alt='Zawodnik.png' /> 
+                                <img id='player-2' className='player-image' src={this.state.players[indexNext].imgURL} alt='Zawodnik.png' />
                             </div>
                             <div className='content-primary'>
                                 <div className='content-image__main'>
-                                    <img className='player-image' src={this.state.players[index].imgURL} alt='Zawodnik.png' />
+                                    <img id='player-3' className='player-image' src={this.state.players[index].imgURL} alt='Zawodnik.png' />
                                 </div>
                             </div>
                             <div className='content-text'>
                                     <p className='player-name'>{this.state.players[index].name}</p>
                                     <p className='player-position'>Pozycja: {this.state.players[index].position}</p>
                                     <p className='player-age'>Wiek: {playerAge}</p>
+                                    <p className='player-description'>{this.state.players[index].desc}</p>
                             </div>
                         </div>
-                    </div>
-                        {/* Navigation */}
+                                                {/* Navigation */}
                         <div className='team-nav row'>
-                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrleft' onClick={() => this.handlePlayerChangePrev()}>&larr;</button>
-                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrright' onClick={() => this.handlePlayerChangeNext()}>&rarr;</button>
+                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrleft' onClick={() => this.handlePlayerChangePrev()}><i class="fas fa-arrow-left"></i></button>
+                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrright' onClick={() => this.handlePlayerChangeNext()}><i class="fas fa-arrow-right"></i></button>
                         </div>
+                    </div>
                 </div>
             
             )
