@@ -17,6 +17,8 @@ import Trainings from './components/Trainings';
 import SignInPage from './components/SignInPage';
 import Admin from './components/Admin/Adminpanel';
 import Postlink from './components/Postlink';
+import Matches from './components/Matches';
+import Contact from './components/Contact';
 import * as ROUTES from './constants/routes';
 
 
@@ -49,6 +51,8 @@ class App extends Component {
         <Route path={ROUTES.TRAININGS} component={Trainings} />
         <Route path={ROUTES.SIGNINPAGE} component={SignInPage} />
         <Route path={ROUTES.ADMINPANEL} component={Admin} />
+        <Route path={ROUTES.MATCHES} component={Matches} />
+        <Route path={ROUTES.CONTACT} component={Contact} />
 
         <Route path={ROUTES.POSTLINK} component={Postlink} />
       </Router>

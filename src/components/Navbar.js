@@ -90,10 +90,10 @@ class Navbar extends Component {
                             <Link to={ROUTES.TRAININGS} id='trainings' onClick={e => this.linkToggle(e)}><p className='link' id='link-trainings'>Treningi</p></Link>
                         </li>
                         <li>
-                            <Link to={ROUTES.SIGNINPAGE} id='signin' onClick={e => this.linkToggle(e)}><p className='link' id='link-signin'>Zaloguj</p></Link>
+                            <Link to={ROUTES.MATCHES} id='matches' onClick={e => this.linkToggle(e)}><p className='link' id='link-matches'>Mecze</p></Link>
                         </li>
                         <li>
-                            <Link to={ROUTES.ADMINPANEL} id='admin' onClick={e => this.linkToggle(e)}><p className='link' id='link-admin'>Admin</p></Link>
+                            <Link to={ROUTES.CONTACT} id='contact' onClick={e => this.linkToggle(e)}><p className='link' id='link-contact'>Kontakt</p></Link>
                         </li>
                     </ul>
                     <div className='navibar-mobile' id='navbar-mobile'>
@@ -118,10 +118,10 @@ class Navbar extends Component {
                                     <Link to={ROUTES.TRAININGS} onClick={e => this.linkToggleMobile(e)}><p className='link-mobile' id='link-trainings__mobile'>Treningi</p></Link>
                                 </li>
                                 <li>
-                                    <Link to={ROUTES.SIGNINPAGE} onClick={e => this.linkToggleMobile(e)}><p className='link-mobile' id='link-signin__mobile'>Zaloguj</p></Link>
+                                    <Link to={ROUTES.MATCHES} onClick={e => this.linkToggleMobile(e)}><p className='link-mobile' id='link-matches__mobile'>Mecze</p></Link>
                                 </li>
                                 <li>
-                                    <Link to={ROUTES.ADMINPANEL} onClick={e => this.linkToggleMobile(e)}><p className='link-mobile' id='link-admin__mobile'>Admin</p></Link>
+                                    <Link to={ROUTES.CONTACT} onClick={e => this.linkToggleMobile(e)}><p className='link-mobile' id='link-contact__mobile'>Kontakt</p></Link>
                                 </li>
                             </ul>
                         </div>

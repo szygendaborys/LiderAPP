@@ -1,0 +1,24 @@
+@import 'constants';
+
+.matches {
+    .section-title {
+        color:$text;
+        padding-left:20px;
+    }
+    .work-in-progress {
+
+        p {
+            color:white;
+            margin-bottom:50px;
+            margin-left:100px;
+        }
+
+        img {
+            position: absolute;
+            width:100%;
+            left:0;
+            right:0;
+            filter: opacity(0.2);
+        }
+    }
+}

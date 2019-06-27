@@ -6,6 +6,8 @@
         margin-bottom:0;
     }
     .training-box {
+        margin-bottom:100px;
+
         .training-team {
             font-family:$Roboto;
             font-size:30px;
@@ -14,9 +16,24 @@
             font-family:$Lato;
             font-weight: bold;
             margin-top:10px;
+            i {
+                margin-right:5px;
+            }
             .training-hours {
                 border-left:2px solid white;
                 padding-left:8px;
+            }
+        }
+    }
+}
+
+@media only screen and ( max-width:862px) {
+    .trainings {
+        .row {
+            margin:0 !important;
+            padding-left: 20px;
+            .training-box {
+                margin-bottom:40px;
             }
         }
     }
