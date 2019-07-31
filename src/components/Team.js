@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withFirebase } from './Firebase'
 
+import Loading from './Loading'
+
 import '../scss/Globals.scss'
 import '../scss/Team.scss'
 
@@ -148,16 +150,16 @@ class Team extends Component {
                         </div>
                                                 {/* Navigation */}
                         <div className='team-nav row'>
-                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrleft' onClick={() => this.handlePlayerChangePrev()}><i class="fas fa-arrow-left"></i></button>
-                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrright' onClick={() => this.handlePlayerChangeNext()}><i class="fas fa-arrow-right"></i></button>
+                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrleft' onClick={() => this.handlePlayerChangePrev()}><i className="fas fa-arrow-left"></i></button>
+                            <button className='col-lg-3 col-md-6 col-sm-6 arr arrright' onClick={() => this.handlePlayerChangeNext()}><i className="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-            
+
             )
         } else {
             return (
-                <div><p>Loading...</p></div>
+                <div><Loading /></div>
             )
         }
     }

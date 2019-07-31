@@ -6,3 +6,15 @@
     margin-top:35pt;
     font-family:$Roboto;
 }
+
+@media only screen and (max-width:827px) {
+    .wrapper {
+        padding-left:10% !important;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .wrapper {
+        padding-left:0 !important;
+    }
+}

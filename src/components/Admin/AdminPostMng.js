@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Post from '../Post'
 import AdminPostModal from './AdminPostModal'
 import SeeMoreBtn from '../SeeMoreBtn'
+import Loading from '../Loading'
 
 import '../../scss/Admin.scss'
 
@@ -156,7 +157,7 @@ handlePageNext() {
                     ))}
 
                     <div className='col-lg-12 col-md-6 col-sm-12 seemore-wrapper'>
-                        {this.state.loading && <p className='seemore-btn'>Loading...</p>}
+                        {this.state.loading && <Loading />}
                         {!this.state.loading && <SeeMoreBtn handlePageNext={() => this.handlePageNext()} />}
                     </div>
 

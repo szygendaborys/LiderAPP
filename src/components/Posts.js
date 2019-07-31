@@ -3,6 +3,7 @@ import { withFirebase } from './Firebase'
 
 import Post from './Post'
 import SeeMoreBtn from './SeeMoreBtn'
+import Loading from './Loading'
 
 import '../scss/Post.scss'
 
@@ -91,8 +92,8 @@ class Posts extends Component {
                             imgURL={post.imgURL}/>
                     ))}
 
-                    <div className='col-lg-12 col-md-6 col-sm-12 seemore-wrapper'>
-                        {this.state.loading && <p className='seemore-btn'>Loading...</p>}
+                    <div className='col-lg-12 col-md-12 col-sm-12 seemore-wrapper'>
+                        {this.state.loading && <Loading />}
                         {!this.state.loading && <SeeMoreBtn handlePageNext={() => this.handlePageNext()} />}
                     </div>
                 </div>

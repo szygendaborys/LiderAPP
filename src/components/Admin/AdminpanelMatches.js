@@ -4,10 +4,10 @@ import { compose } from 'recompose'
 import { withAuthorisation } from '../Session'
 import { withFirebase } from '../Firebase'
 
-import AdminPostMng from './AdminPostMng';
 import AdminNavbar from './Navbar';
+import AdminMatches from './AdminMatches'
 
-const Adminpanel = ({authUser}) => (
+const AdminpanelMatches = ({authUser}) => (
 <div>{authUser ? <AdminpanelAuth /> : <AdminpanelNonAuth />}</div>
 )
 
@@ -16,7 +16,7 @@ class AdminpanelAuth extends Component {
         return (
             <div>
                 <AdminNavbar />
-                <AdminPostMng />
+                <AdminMatches />
             </div>
         )
     }
@@ -34,4 +34,4 @@ const mapStateToProps = state => ({
 
 const condition = authUser => !!authUser
 
-export default compose(withAuthorisation(condition), connect(mapStateToProps),withFirebase)(Adminpanel);
+export default compose(withAuthorisation(condition), connect(mapStateToProps),withFirebase)(AdminpanelMatches);

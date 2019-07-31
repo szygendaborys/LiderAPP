@@ -59,8 +59,18 @@
         position: absolute;
         bottom:0;
         width:100%;
-        justify-content: flex-end;
+        justify-content: space-between;
         background-color:$post-primary;
+        .post-date {
+            margin-left:15px;
+            margin-right:10px;
+            align-self:center;
+            font-family: $Roboto;
+            font-size:0.6rem;
+            &:hover {
+                cursor: default;
+            }
+        }
         .post-readmore__btn {
             width:43%;
             border:none;
@@ -129,19 +139,16 @@
         }
     }
 }
-.seemore-wrapper {
-
+.seemore-container {
+    width:100%;
     .seemore-btn {
         margin-bottom:40px;
-        margin-left:40%;
         padding:15px 30px;
-        transform: translateX(-20%);
         font-family:$Roboto;
         font-weight: bold;
         color:$text;
         background-color:$post-readmore;
         transition:0.3s;
-
         &:hover {
         background-color:$post-primary;
         }
@@ -159,11 +166,26 @@
     }
 }
 
+@media only screen and (max-width:1154px) {
+    .post-date {
+        font-size:0.5rem !important;
+    }
+
+    .post-readmore__btn {
+        font-size:6pt !important;
+    }
+}
+
 @media only screen and (max-width:1100px) {
     .post-content {
         .post-footer{
+            .post-date {
+                margin-left:5px;
+                margin-right:5px;
+                font-size:0.6rem !important;
+            }
             .post-readmore__btn {
-                width:100%;
+                width:35%;
                 padding-top:5pt;
                 padding-bottom:5pt;
             }
@@ -183,6 +205,9 @@
                 padding-bottom:35pt;
             }
             .post-footer {
+                .post-date {
+                    margin-left:15px;
+                }
                 .post-readmore__btn {
                     font-size:14pt;
                 }
@@ -203,9 +228,12 @@
             order:1;
         }
     }
+}
 
-
-
+@media only screen and (max-width:827px) {
+    // .wrapper {
+    //     max-width:100%;
+    // } HALP WITH THIS SCREEN 
 }
 
 @media only screen and (max-width:767px) {
@@ -217,11 +245,31 @@
     .post {
         margin-left:0 !important;
         margin-right:0 !important;
+
+        .post-footer {
+            .post-date {
+                font-size: 0.8rem !important;
+            }
+            .post-readmore__btn {
+                font-size:10pt !important;
+            }
+        }
     }
 
     .postlink {
         padding:0 !important;
     }
+
+    .wrapper {
+        margin:0;
+        margin-top:35pt;
+    }
+
+    .seemore-btn {
+        width:100%;
+    }
+
+    
 }
 
 @media only screen and (max-width:575px) {

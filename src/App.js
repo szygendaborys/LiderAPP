@@ -19,6 +19,11 @@ import Admin from './components/Admin/Adminpanel';
 import Postlink from './components/Postlink';
 import Matches from './components/Matches';
 import Contact from './components/Contact';
+import AdminLoginButton from './components/Admin/AdminLoginButton';
+import Footer from './components/Footer';
+import AdminpanelMatches from './components/Admin/AdminpanelMatches';
+import AdminMatchesBox from './components/Matches/AdminMatchesBox';
+
 import * as ROUTES from './constants/routes';
 
 
@@ -55,6 +60,11 @@ class App extends Component {
         <Route path={ROUTES.CONTACT} component={Contact} />
 
         <Route path={ROUTES.POSTLINK} component={Postlink} />
+        <Route path={ROUTES.ADMINPANELMATCHES} component={AdminpanelMatches} />
+        <Route path={ROUTES.ADMINSEASON} component={AdminMatchesBox} />
+
+        <AdminLoginButton />
+        <Footer />
       </Router>
 
       

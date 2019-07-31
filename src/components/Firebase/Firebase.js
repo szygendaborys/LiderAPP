@@ -42,6 +42,8 @@ const firebaseConfig = {
     
     players = () => this.db.collection('players');
     playersimg = () => this.playersimg;
+
+    matches = () => this.db.collection('matches');
   }
 
 

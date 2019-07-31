@@ -1,0 +1,15 @@
+@import 'constants';
+
+.footer {
+    margin-top:40px;
+    padding:10px 40px;
+    left:0;
+    right:0;
+
+    font-family:$Roboto;
+    color:$text;
+    background-color:rgb(10, 10, 10);
+    p {
+        text-align: end;
+    }
+}

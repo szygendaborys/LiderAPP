@@ -1,5 +1,8 @@
 @import 'constants';
 
+$primary-btn: black;
+$border-to-btn: white;
+
 // .App {
 // }
 
@@ -23,11 +26,75 @@
   height:113pt;
 }
 
+.admin-login__button {
+  position:fixed;
+  right:0;
+  bottom:10px;
+
+  width:0;
+  height:0;
+
+  padding:0;
+  margin:0;
+
+  color:$primary-btn;
+  background-color:$primary-btn;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $border-to-btn;
+
+  transition:0.3s;
+
+  &:hover {
+    color:$primary-btn;
+    background-color:$primary-btn;
+    transform: scale(2);
+  }
+}
+
+.loading {
+  margin-top:5%;
+  margin-left:5%;
+  margin-bottom:40px;
+  padding:15px 50px;
+  font-family:$Roboto;
+  font-weight: bold;
+  color:$text;
+  background-color:$post-readmore;
+  transition:0.3s;
+  animation: loadingFade 1.5s infinite;
+  max-width:300px;
+    &:hover {
+      background-color:$post-primary;
+    }
+}
+
+@keyframes loadingFade {
+  from {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
 @media only screen and (max-width:1100px) {
   .logo {
       width:47pt;
       height:62pt;
       top:30pt;
       left:32pt;
+  }
+}
+
+
+@media only screen and (max-width:575px) {
+  .seemore-btn {
+      padding-left:15px !important;
+      padding-right:15px !important;
   }
 }
